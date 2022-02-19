@@ -1,0 +1,30 @@
+{
+  "name": "door-cli",
+  "version": "1.0.0",
+  "description": "脚手架构建工具",
+  "private": true,
+  "author": "lzdjack<1956252575@qq.com>",
+  "license": "MIT",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "bootstrap": "yarn install",
+    "lint:prettier": "yarn prettier --write .",
+    "lint:lint-staged": "lint-staged -c ./.husky/lintstagedrc.js",
+    "lint:pretty": "pretty-quick --staged",
+    "lint:eslint": "eslint \"packages/**/*.js\" --fix",
+    "prepare": "is-ci || husky install",
+    "commit": "cz"
+  },
+  "devDependencies": {
+    "eslint": "^8.9.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "husky": "^6.0.0",
+    "is-ci": "^3.0.1",
+    "lerna": "^4.0.0",
+    "lint-staged": "^12.3.4",
+    "prettier": "2.5.1",
+    "pretty-quick": "^3.1.3"
+  }
+}
